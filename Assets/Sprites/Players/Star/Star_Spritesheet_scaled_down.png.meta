@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 4738fd78bf20e6848b3801ac6869235c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5622528173329501064
+    second: Star_Spritesheet_scaled_down_0
+  - first:
+      213: 6375645558045545845
+    second: Star_Spritesheet_scaled_down_1
+  - first:
+      213: 4924872590904027223
+    second: Star_Spritesheet_scaled_down_2
+  - first:
+      213: 9065303051964799927
+    second: Star_Spritesheet_scaled_down_3
+  - first:
+      213: -6536481773638673331
+    second: Star_Spritesheet_scaled_down_4
+  - first:
+      213: -3206363126920610102
+    second: Star_Spritesheet_scaled_down_5
+  - first:
+      213: -8589208307721134058
+    second: Star_Spritesheet_scaled_down_6
+  - first:
+      213: 8744804604195703833
+    second: Star_Spritesheet_scaled_down_7
+  - first:
+      213: -749281795990569694
+    second: Star_Spritesheet_scaled_down_8
+  - first:
+      213: -5138150166542108488
+    second: Star_Spritesheet_scaled_down_9
+  - first:
+      213: 2926130718951683278
+    second: Star_Spritesheet_scaled_down_10
+  - first:
+      213: 8872979072957440884
+    second: Star_Spritesheet_scaled_down_11
+  - first:
+      213: -3807988769641908802
+    second: Star_Spritesheet_scaled_down_12
+  - first:
+      213: -439547962198713287
+    second: Star_Spritesheet_scaled_down_13
+  - first:
+      213: 5824342037055308055
+    second: Star_Spritesheet_scaled_down_14
+  - first:
+      213: 1622259371202674700
+    second: Star_Spritesheet_scaled_down_15
+  - first:
+      213: -8399350477776036898
+    second: Star_Spritesheet_scaled_down_16
+  - first:
+      213: -3846622079953751369
+    second: Star_Spritesheet_scaled_down_17
+  - first:
+      213: 5688857266107877295
+    second: Star_Spritesheet_scaled_down_18
+  - first:
+      213: -1466483922301430678
+    second: Star_Spritesheet_scaled_down_19
+  - first:
+      213: 1656774175319647925
+    second: Star_Spritesheet_scaled_down_20
+  - first:
+      213: -1576728121038837700
+    second: Star_Spritesheet_scaled_down_21
+  - first:
+      213: 1573944371516110251
+    second: Star_Spritesheet_scaled_down_22
+  - first:
+      213: -4789620440024383622
+    second: Star_Spritesheet_scaled_down_23
+  - first:
+      213: 3118325430694740148
+    second: Star_Spritesheet_scaled_down_24
+  - first:
+      213: -6242979062528254702
+    second: Star_Spritesheet_scaled_down_25
+  - first:
+      213: -1974858030913705
+    second: Star_Spritesheet_scaled_down_26
+  - first:
+      213: 6097948857206580459
+    second: Star_Spritesheet_scaled_down_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3029
+        width: 421
+        height: 651
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b4eee859b370e40800000000000000
+      internalID: 5622528173329501064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_1
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 3029
+        width: 456
+        height: 649
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5751a1dfad7da7850800000000000000
+      internalID: 6375645558045545845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_2
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 3033
+        width: 493
+        height: 676
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75864e04789a85440800000000000000
+      internalID: 4924872590904027223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_3
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 3031
+        width: 517
+        height: 655
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb50a1881d6ecd70800000000000000
+      internalID: 9065303051964799927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_4
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 3029
+        width: 477
+        height: 655
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c93796570c945a0800000000000000
+      internalID: -6536481773638673331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_5
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 2244
+        width: 674
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace7cfe59b5b083d0800000000000000
+      internalID: -3206363126920610102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2330
+        width: 738
+        height: 394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610a27c3d800dc880800000000000000
+      internalID: -8589208307721134058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_7
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 2300
+        width: 720
+        height: 345
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c094f9479cb5970800000000000000
+      internalID: 8744804604195703833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_8
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 2227
+        width: 724
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22db0592d240a95f0800000000000000
+      internalID: -749281795990569694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_9
+      rect:
+        serializedVersion: 2
+        x: 2418
+        y: 2262
+        width: 660
+        height: 426
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8b4a885af91b8b0800000000000000
+      internalID: -5138150166542108488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 1507
+        width: 565
+        height: 609
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec43975b264bb9820800000000000000
+      internalID: 2926130718951683278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 757
+        width: 543
+        height: 611
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb531dcb36e472bc0800000000000000
+      internalID: -3807988769641908802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_13
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 757
+        width: 612
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c166b057966e9f0800000000000000
+      internalID: -439547962198713287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_14
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 745
+        width: 638
+        height: 662
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7118e09593834d050800000000000000
+      internalID: 5824342037055308055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_16
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 760
+        width: 678
+        height: 632
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbd62cfd338f6b80800000000000000
+      internalID: -8399350477776036898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_18
+      rect:
+        serializedVersion: 2
+        x: 3083
+        y: 773
+        width: 683
+        height: 619
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7824cea81e2fe40800000000000000
+      internalID: 5688857266107877295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_15
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 48
+        width: 686
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0085129d4c638610800000000000000
+      internalID: 1622259371202674700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_17
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 47
+        width: 707
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2be2b399d0e9ac0800000000000000
+      internalID: -3846622079953751369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Star_Spritesheet_scaled_down_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 670
+        height: 614
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64d66674a006abe0800000000000000
+      internalID: -1466483922301430678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
