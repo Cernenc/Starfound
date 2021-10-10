@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7216140381893537449}
   - component: {fileID: 7216140381893537620}
   - component: {fileID: 4515715779661711782}
-  m_Layer: 15
+  m_Layer: 14
   m_Name: Powernote
   m_TagString: Untagged
   m_Icon: {fileID: 0}

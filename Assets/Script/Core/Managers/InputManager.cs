@@ -37,18 +37,21 @@ namespace Assets.Script.Core.Managers
 
         private void ActivateItem()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (gameManager.PlayerInventory != null)
             {
-                if(gameManager.PlayerInventory.SpeedupnoteList.Count > 0)
+                if (Input.GetButtonDown("Fire1"))
                 {
-                    gameManager.PlayerInventory.SpeedupnoteList[0].OnActivation();
+                    if (gameManager.PlayerInventory.SpeedupnoteList.Count > 0)
+                    {
+                        gameManager.PlayerInventory.SpeedupnoteList[0].OnActivation();
+                    }
                 }
-            }
-            else if (Input.GetButtonDown("Fire2"))
-            {
-                if (gameManager.PlayerInventory.SpinnoteList.Count > 0)
+                else if (Input.GetButtonDown("Fire2"))
                 {
-                    gameManager.PlayerInventory.SpinnoteList[0].OnActivation();
+                    if (gameManager.PlayerInventory.SpinnoteList.Count > 0)
+                    {
+                        gameManager.PlayerInventory.SpinnoteList[0].OnActivation();
+                    }
                 }
             }
         }

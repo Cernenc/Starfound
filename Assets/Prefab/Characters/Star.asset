@@ -16,6 +16,6 @@ MonoBehaviour:
   <MovementSpeed>k__BackingField: 11
   <JumpHeight>k__BackingField: 80
   <FallSpeed>k__BackingField: 30
-  <GaugeMaxAmount>k__BackingField: 100
+  <GaugeMaxAmount>k__BackingField: 5
   <GaugeLossAmountPerSecond>k__BackingField: 3.5
   <IFrames>k__BackingField: 2

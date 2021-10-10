@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3972782733725273448}
   - component: {fileID: 3972782733725273449}
   - component: {fileID: -3933671090503902877}
-  m_Layer: 15
+  m_Layer: 14
   m_Name: Spinnote
   m_TagString: Untagged
   m_Icon: {fileID: 0}

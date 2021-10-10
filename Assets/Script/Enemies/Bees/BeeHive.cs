@@ -45,6 +45,7 @@ namespace Assets.Script.Enemies.Bees
         {
             var bee = Instantiate(projectile) as GameObject;
             bee.transform.parent = transform;
+            bee.transform.position = transform.position;
         }
     }
 }

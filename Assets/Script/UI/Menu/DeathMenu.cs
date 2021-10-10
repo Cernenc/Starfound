@@ -1,4 +1,5 @@
 ﻿using Assets.Script.Core.Managers;
+using Assets.Script.Scenes;
 using UnityEngine;
 
 public class DeathMenu : MonoBehaviour
@@ -22,6 +23,7 @@ public class DeathMenu : MonoBehaviour
 
     public void RepeatLevel()
     {
-
+        Loader loader = new Loader();
+        StartCoroutine(loader.LoadLevelAsync());
     }
 }

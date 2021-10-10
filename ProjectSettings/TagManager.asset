@@ -13,14 +13,14 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hitbox
+  - Hurtbox
+  - Enemy
+  - Projectile
+  - Player
+  - Reflector
+  - Collection
+  - Ground
   - 
   - 
   - 

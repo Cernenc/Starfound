@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5440995035671115328}
   - component: {fileID: 8082404604425976751}
   - component: {fileID: 4215698802372059265}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 2652862129114677813}
   - component: {fileID: 2652862129114677812}
   - component: {fileID: 843200505}
-  m_Layer: 14
+  m_Layer: 13
   m_Name: Reflector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2652862129797822576}
   - component: {fileID: 2652862129797822583}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 3843115440050478599}
   - component: {fileID: 1859318067095167744}
   - component: {fileID: 2652862130887764284}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 7054910506114823052}
   - component: {fileID: 7692677621137854640}
   - component: {fileID: 6182004437936852025}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

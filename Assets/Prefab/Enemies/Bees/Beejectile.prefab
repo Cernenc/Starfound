@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9141283143281004188}
   - component: {fileID: 130638987274095598}
   - component: {fileID: 2554871390589408160}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Beejectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

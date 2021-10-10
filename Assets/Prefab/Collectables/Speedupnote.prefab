@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4140567735152670139}
   - component: {fileID: 4140567735152670138}
   - component: {fileID: -7931383251595208209}
-  m_Layer: 15
+  m_Layer: 14
   m_Name: Speedupnote
   m_TagString: Untagged
   m_Icon: {fileID: 0}

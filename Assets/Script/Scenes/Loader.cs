@@ -9,7 +9,8 @@ namespace Assets.Script.Scenes
     {
         public IEnumerator LoadLevelAsync()
         {
-            var actualSceneAsyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Additive);
+            UnloadLevelAsync();
+            var actualSceneAsyncOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Additive);
             actualSceneAsyncOperation.allowSceneActivation = false;
 
             while (actualSceneAsyncOperation.progress < 0.9f)
@@ -20,7 +21,6 @@ namespace Assets.Script.Scenes
             actualSceneAsyncOperation.allowSceneActivation = true;
 
             yield return new WaitUntil(() => actualSceneAsyncOperation.isDone);
-            UnloadLevelAsync();
         }
 
         private void ActualSceneAsyncOperation_completed(AsyncOperation obj)

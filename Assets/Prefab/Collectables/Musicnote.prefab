@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6746821822618009797}
   - component: {fileID: 6867824450527353017}
   - component: {fileID: 4676447721944906497}
-  m_Layer: 15
+  m_Layer: 14
   m_Name: Musicnote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
