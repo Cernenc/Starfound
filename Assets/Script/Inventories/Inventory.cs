@@ -1,5 +1,4 @@
 ﻿using Assets.Script.Collectables.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace Assets.Script.Inventories
