@@ -83,6 +83,9 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Zenject">
+      <HintPath>Library/ScriptAssemblies/Zenject.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:/Unity/2019.4.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.dll</HintPath>
     </Reference>
@@ -313,6 +316,18 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-Editor">
+      <HintPath>Library/ScriptAssemblies/Zenject-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-ReflectionBaking-Editor">
+      <HintPath>Library/ScriptAssemblies/Zenject-ReflectionBaking-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-PoolMonitor-Editor">
+      <HintPath>Library/ScriptAssemblies/Zenject-PoolMonitor-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Unity\2019.4.13f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -703,6 +718,7 @@
     <Compile Include="Assets\Script\Enemies\Interfaces\IEnemyProjectile.cs" />
     <Compile Include="Assets\Script\Enemies\Triggers\TriggerRange.cs" />
     <Compile Include="Assets\Script\Goal.cs" />
+    <Compile Include="Assets\Script\Installers\InventoryInstaller.cs" />
     <Compile Include="Assets\Script\Inventories\Inventory.cs" />
     <Compile Include="Assets\Script\Invulnerability.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Attributes\CharacterAttributeManager.cs" />

@@ -3,6 +3,7 @@ using Assets.Script.PlayableCharacters.States;
 using Assets.Script.UI.Menu;
 using System;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Script.Core.Managers
 {
@@ -21,6 +22,7 @@ namespace Assets.Script.Core.Managers
         [field: SerializeField]
         public DeathMenu deathMenu { get; set; }
 
+        [Inject]
         public IInventory PlayerInventory { get; set; }
 
         private void Awake()

@@ -15,6 +15,12 @@ namespace Assets.Script.UI
 
         public void Update()
         {
+            if(GaugeImage.enabled == false)
+            {
+                Debug.Log((int)Gauge.Instance.CurrentGaugeAmount / Gauge.Instance.MaxGaugeAmount);
+                return;
+            }
+
             GaugeImage.fillAmount = (float)(Gauge.Instance.CurrentGaugeAmount / Gauge.Instance.MaxGaugeAmount);
         }
     }
