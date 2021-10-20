@@ -5,7 +5,7 @@ using Assets.Script.PlayableCharacters.Interfaces;
 using System;
 using System.Collections;
 using UnityEngine;
-//using Zenject;
+using Zenject;
 
 namespace Assets.Script.Collectables.View.Specialnotes
 {
@@ -13,7 +13,6 @@ namespace Assets.Script.Collectables.View.Specialnotes
     {
         [field: SerializeField]
         public float FillAmount { get; set; }
-
         public int SpeedCounter { get; } = 8;
 
         [SerializeField]
@@ -24,7 +23,7 @@ namespace Assets.Script.Collectables.View.Specialnotes
 
         public IMusicnoteComponents Components { get; set; }
 
-        //[Inject]
+        [Inject]
         private IInventory inventory { get; set; }
 
         public ICharacter Player { get; set; }

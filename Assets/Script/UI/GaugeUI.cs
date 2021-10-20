@@ -17,7 +17,7 @@ namespace Assets.Script.UI
         {
             if(GaugeImage.enabled == false)
             {
-                Debug.Log((int)Gauge.Instance.CurrentGaugeAmount / Gauge.Instance.MaxGaugeAmount);
+                //Debug.Log((int)Gauge.Instance.CurrentGaugeAmount / Gauge.Instance.MaxGaugeAmount);
                 return;
             }
 

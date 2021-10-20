@@ -1,7 +1,6 @@
 ﻿using Assets.Script.Inventories;
 using Assets.Script.PlayableCharacters.States;
 using Assets.Script.UI.Menu;
-using System;
 using UnityEngine;
 using Zenject;
 
@@ -61,6 +60,7 @@ namespace Assets.Script.Core.Managers
         private void HandleLevelCleared()
         {
             winningMenu.WinningMenuObject.SetActive(true);
+            winningMenu.LevelClear();
             animationManager.IdleAnimation();
             playerManager.Player.ChangeState(WinningState.Instance);
             CanPause = false;

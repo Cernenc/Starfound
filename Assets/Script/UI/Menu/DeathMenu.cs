@@ -1,6 +1,6 @@
-﻿using Assets.Script.Core.Managers;
-using Assets.Script.Scenes;
+﻿using Assets.Script.Scenes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeathMenu : MonoBehaviour
 {
@@ -8,22 +8,19 @@ public class DeathMenu : MonoBehaviour
     public GameObject DeathMenuObject { get; set; }
     
     [field: SerializeField]
-    public GameObject RepeatBtn { get; set; }
+    public Button RepeatBtn { get; set; }
     
     [field: SerializeField]
-    public GameObject MenuBtn { get; set; }
-
-    public GameManager Manager { get; set; }
+    public Button MenuBtn { get; set; }
 
     private void Start()
     {
         DeathMenuObject.SetActive(false);
-        Manager = FindObjectOfType<GameManager>();
     }
 
     public void RepeatLevel()
     {
         Loader loader = new Loader();
-        StartCoroutine(loader.LoadLevelAsync());
+        loader.LoadCurrentLevel();
     }
 }

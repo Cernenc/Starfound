@@ -6,7 +6,7 @@ using Assets.Script.PlayableCharacters.Interfaces;
 using System;
 using System.Collections;
 using UnityEngine;
-//using Zenject;
+using Zenject;
 
 namespace Assets.Script.Collectables.View.Specialnotes
 {
@@ -25,7 +25,7 @@ namespace Assets.Script.Collectables.View.Specialnotes
 
         public PowernoteEffect PowernoteEffect { get; set; }
 
-        //[Inject]
+        [Inject]
         private IInventory inventory { get; set; }
 
         private Powernote()

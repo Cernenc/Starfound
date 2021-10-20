@@ -10,7 +10,6 @@ namespace Assets.Script.Collectables.Interfaces
         IMusicnoteComponents Components { get; set; }
         void Collect();
         void AddToSpeedCounter();
-
         ICharacter Player { get; set; }
     }
 }
