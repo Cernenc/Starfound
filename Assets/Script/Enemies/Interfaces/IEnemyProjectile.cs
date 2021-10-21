@@ -8,7 +8,6 @@ namespace Assets.Script.Enemies.Interfaces
 
         void DestroyProjectile();
 
-        Vector3 Direction { get; set; }
         Vector2 DirectionalPoint { get; set; }
     }
 }

@@ -45,7 +45,7 @@ namespace Assets.Script.Enemies.Triggers
             }
             if (Enemy.GetType() == typeof(BeeHive))
             {
-                Enemy.ChangeState(BeeEnragedState.Instance);
+                 Enemy.ChangeState(BeeEnragedState.Instance);
             }
         }
 

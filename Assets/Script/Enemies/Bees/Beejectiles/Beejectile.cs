@@ -12,8 +12,6 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
         private Vector3 TargetPosition { get; set; }
         public Vector2 DirectionalPoint { get; set; } = Vector2.zero;
 
-        public Vector3 Direction { get; set; }
-
         private float _timer = 0f;
 
         [field: SerializeField]
@@ -40,8 +38,8 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
 
         public void Shoot()
         {
-            Direction = Hive.AttributeManager.Speed * Time.deltaTime * DirectionalPoint;
-            transform.Translate(Direction, Space.World);
+            var direction = Hive.AttributeManager.Speed * Time.deltaTime * DirectionalPoint;
+            transform.Translate(direction, Space.World);
         }
 
         public void DestroyProjectile()

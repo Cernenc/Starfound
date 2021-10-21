@@ -15,9 +15,6 @@ public class Reflector : MonoBehaviour
 
     private void BounceProjectile(IEnemyProjectile projectile, ContactPoint contact)
     {
-        Debug.Log(projectile.DirectionalPoint);
-        projectile.DirectionalPoint = Vector3.Reflect(projectile.Direction.normalized, contact.point.normalized);
-        Debug.Log(projectile.DirectionalPoint);
-
+        projectile.DirectionalPoint = -projectile.DirectionalPoint;
     }
 }

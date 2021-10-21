@@ -709,7 +709,6 @@
     <Compile Include="Assets\Script\Enemies\Attributes\EnemyComponents.cs" />
     <Compile Include="Assets\Script\Enemies\Bees\BeeHive.cs" />
     <Compile Include="Assets\Script\Enemies\Bees\Beejectiles\Beejectile.cs" />
-    <Compile Include="Assets\Script\Enemies\Bees\Beejectiles\BeejectileCollision.cs" />
     <Compile Include="Assets\Script\Enemies\Bees\States\BeeDefaultState.cs" />
     <Compile Include="Assets\Script\Enemies\Bees\States\BeeEnragedState.cs" />
     <Compile Include="Assets\Script\Enemies\Interfaces\IEnemy.cs" />
