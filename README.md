@@ -26,7 +26,7 @@ Stars abilities are:
 - Spin -> reflects incoming projectiles
 - Power of friendship -> Find friends scattered in every level. Each friend gives one stack of friendship. Each stack activates its effect then the effect -1 up to one stack. Up to three friends can be found in one level.
 
-- No. of Stack(s) / effect <br></br>
+No. of Stack(s) / effect <br></br>
 One stack: destroys every enemy and projectile on screen. <br></br>
 Two stacks: collects all notes on screen. <br></br>
 Three stacks: opens a secret exit. <br></br>
@@ -63,8 +63,8 @@ The beehive and the projectiles damage the player by contact.
 Collect Music- and Specialnotes to fill up your health. Each note grants Star one stack of "Speedcounter" and increases his base speed by x%. Speedcounter reset when getting hit.
 
 #### 4.1. Specialnotes
-Specialnotes are different from Musicnotes. Collect them and add them to your inventory. Activate an item by a press of a button
-Current Specialnotes activate effects listed on "### 1. Star"
+Specialnotes are different from Musicnotes. Collect them and add them to your inventory. Activate an item by a press of a button <br />
+Current Specialnotes:
 - Speedupnote -> speeds up Star for x seconds by y amount
 - Spinnote -> creates a reflector for x seconds which deflects incoming projectiles
-- Powernote -> activates automatically when collecting. Activates "Power of friendship" 
+- Powernote -> activates automatically when collected. Activates "Power of friendship"
