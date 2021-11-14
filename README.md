@@ -2,6 +2,11 @@
 
 I welcome you to Starfound!
 
+## General info
+This project is created with:
+- Unity3D V2019.4.13.f1
+- Visual Studio 2019
+
 ## Story
 In this side-scrolling platformer you control the character "Star", a music composing star who animates his friends with dances and music to brighten up the night sky.
 One day he collides with a mysterious meteor by accident and loses almost all his power and crashes, alongside the meteor, to earth.
