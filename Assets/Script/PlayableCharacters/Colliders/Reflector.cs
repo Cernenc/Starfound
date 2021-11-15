@@ -1,20 +1,22 @@
 ﻿using Assets.Script.Enemies.Interfaces;
 using UnityEngine;
 
+/// <summary>
+/// reflects in opposite direction for now -> todo: vector math and stuff
+/// </summary>
 public class Reflector : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        var projectile = collision.gameObject.GetComponent<IEnemyProjectile>();
-        if (projectile != null)
+        var projectile = other.GetComponent<IEnemyProjectile>();
+        if(projectile != null)
         {
-            ContactPoint contact = collision.GetContact(0);
-            BounceProjectile(projectile, contact);
+            BounceProjectile(projectile);
         }
     }
 
-    private void BounceProjectile(IEnemyProjectile projectile, ContactPoint contact)
+    private void BounceProjectile(IEnemyProjectile projectile)
     {
-        projectile.DirectionalPoint = -projectile.DirectionalPoint;
+        projectile.MoveDirection = -projectile.MoveDirection;
     }
 }

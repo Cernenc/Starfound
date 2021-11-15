@@ -35,12 +35,10 @@ namespace Assets.Script.PlayableCharacters.States
 
         public void Execute(ICharacter character)
         {
-            UnityEngine.Debug.Log("Celebrating Finish Line");
         }
 
         public void Exit(ICharacter character)
         {
-            UnityEngine.Debug.Log("Finishing Finish Line");
         }
     }
 }

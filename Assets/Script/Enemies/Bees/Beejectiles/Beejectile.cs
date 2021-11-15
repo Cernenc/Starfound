@@ -10,7 +10,7 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
         public BeeHive Hive { get; set; }
         public ICharacter Player { get; set; }
         private Vector3 TargetPosition { get; set; }
-        public Vector2 DirectionalPoint { get; set; } = Vector2.zero;
+        public Vector2 MoveDirection { get; set; } = Vector2.zero;
 
         private float _timer = 0f;
 
@@ -22,7 +22,7 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
             Hive = GetComponentInParent<BeeHive>();
             Player = FindObjectOfType<PlayerManager>().Player;
             TargetPosition = Player.Components.Rigidbody.position;
-            DirectionalPoint = (TargetPosition - transform.position).normalized;
+            MoveDirection = (TargetPosition - transform.position).normalized;
             _timer = Time.time;
         }
 
@@ -38,7 +38,7 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
 
         public void Shoot()
         {
-            var direction = Hive.AttributeManager.Speed * Time.deltaTime * DirectionalPoint;
+            var direction = Hive.AttributeManager.Speed * Time.deltaTime * MoveDirection;
             transform.Translate(direction, Space.World);
         }
 

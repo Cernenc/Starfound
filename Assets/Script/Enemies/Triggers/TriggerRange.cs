@@ -3,6 +3,7 @@ using Assets.Script.Enemies.Ants.States;
 using Assets.Script.Enemies.Bees;
 using Assets.Script.Enemies.Bees.States;
 using Assets.Script.Enemies.Interfaces;
+using Assets.Script.PlayableCharacters.Colliders;
 using Assets.Script.PlayableCharacters.Interfaces;
 using UnityEngine;
 
@@ -23,7 +24,8 @@ namespace Assets.Script.Enemies.Triggers
 
         public void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponentInParent<ICharacter>() != null)
+            //other.getcomponentinparent<ICharacter>() triggers three times -> hit-, hurtbox and body
+            if (other.GetComponent<Hurtbox>() != null)
             {
                 GetEnraged();
             }
@@ -31,7 +33,7 @@ namespace Assets.Script.Enemies.Triggers
 
         public void OnTriggerExit(Collider other)
         {
-            if (other.GetComponentInParent<ICharacter>() != null)
+            if (other.GetComponent<Hurtbox>() != null)
             {
                 GetNormal();
             }

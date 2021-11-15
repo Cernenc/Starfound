@@ -28,6 +28,11 @@ namespace Assets.Script.PlayableCharacters.States
             character.Components.Rigidbody.isKinematic = true;
             character.Components.Rigidbody.useGravity = false;
 
+            if (character.playerManager == null)
+            {
+                character.ChangeState(FlyingState.Instance);
+            }
+
             _startPosition = character.playerManager.StartPosition;
         }
 
@@ -40,7 +45,6 @@ namespace Assets.Script.PlayableCharacters.States
             else
             {
                 character.Components.Rigidbody.position = _startPosition.AtStartPosition(character.Components.Rigidbody.position, character);
-
             }
         }
 

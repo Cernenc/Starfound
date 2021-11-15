@@ -25,6 +25,11 @@ namespace Assets.Script.PlayableCharacters
 
         private Statemachine<IEnterExecuteExit<ICharacter>, ICharacter> PlayerState { get; set; }
 
+        public void Construct(ICharacter character)
+        {
+            
+        }
+
         private void GetStatemachine()
         {
             PlayerState = new Statemachine<IEnterExecuteExit<ICharacter>, ICharacter>();
@@ -41,7 +46,10 @@ namespace Assets.Script.PlayableCharacters
         {         
             Components = GetComponent<CharacterComponents>();
             playerManager = FindObjectOfType<PlayerManager>();
-            playerManager.Player = this;
+            if (playerManager != null)
+            {
+                playerManager.Player = this;
+            }
             animationManager = FindObjectOfType<AnimationManager>();
             GetStatemachine();
         }
