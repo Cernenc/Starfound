@@ -6,6 +6,7 @@ I welcome you to Starfound!
 This project is created with:
 - Unity3D V2019.4.13.f1
 - Visual Studio 2019
+Resolution: 1920x1080
 
 ## Story
 In this side-scrolling platformer you control the character "Star", a music composing star who animates his friends with dances and music to brighten up the night sky.
