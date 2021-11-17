@@ -1,17 +1,17 @@
-﻿using Assets.Script.PlayableCharacters.Health;
+﻿using Assets.Script.PlayableCharacters.Interfaces;
 
 namespace Assets.Script.Collectables.Model
 {
     public interface IMusicnoteModel
     {
-        void FillGauge(float fillAmount);
+        void FillGauge(float fillAmount, ICharacter player);
     }
 
     public class MusicnoteModel : IMusicnoteModel
     {
-        public void FillGauge(float fillAmount)
+        public void FillGauge(float fillAmount, ICharacter player)
         {
-            Gauge.Instance.FillGauge(fillAmount);
+            player.PlayerGauge.FillGauge(fillAmount);
         }
     }
 }

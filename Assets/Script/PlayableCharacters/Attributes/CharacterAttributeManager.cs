@@ -10,6 +10,7 @@ namespace Assets.Script.PlayableCharacters.Attributes
         float FallSpeed { get; set; }
         float GaugeMaxAmount { get; set; }
         float GaugeLossAmountPerSecond { get; }
+        float SpeedBoost { get; }
         int IFrames { get; }
     }
 
@@ -33,6 +34,9 @@ namespace Assets.Script.PlayableCharacters.Attributes
 
         [field:SerializeField]
         public float GaugeLossAmountPerSecond { get; set; }
+
+        [field: SerializeField]
+        public float SpeedBoost { get; set; }
 
         [field: SerializeField]
         public int IFrames { get; set; }

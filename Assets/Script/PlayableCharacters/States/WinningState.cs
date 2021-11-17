@@ -12,11 +12,7 @@ namespace Assets.Script.PlayableCharacters.States
         {
             get
             {
-                if(_instance == null)
-                {
-                    _instance = new WinningState();
-                }
-
+                _instance = new WinningState();
                 return _instance;
             }
         }

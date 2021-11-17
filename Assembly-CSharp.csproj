@@ -105,6 +105,7 @@
     <Compile Include="Assets\Script\Enemies\Interfaces\IEnemyProjectile.cs" />
     <Compile Include="Assets\Script\Enemies\Triggers\TriggerRange.cs" />
     <Compile Include="Assets\Script\Goal.cs" />
+    <Compile Include="Assets\Script\Installers\ICharacterInstaller.cs" />
     <Compile Include="Assets\Script\Installers\InventoryInstaller.cs" />
     <Compile Include="Assets\Script\Installers\MusicnoteInstaller.cs" />
     <Compile Include="Assets\Script\Inventories\Inventory.cs" />

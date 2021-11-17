@@ -3,6 +3,7 @@ using Assets.Script.Statemachine.Interfaces;
 using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.States.Support;
 using UnityEngine;
+using System;
 
 namespace Assets.Script.PlayableCharacters.States
 {
@@ -46,9 +47,10 @@ namespace Assets.Script.PlayableCharacters.States
 
         public void Execute(ICharacter character)
         {
-            _movement.ForceMovement(character.AttributeManager.MovementSpeed + character.SpeedCounter);
+            _movement.ForceMovement(character.AttributeManager.MovementSpeed + character.SpeedCounter * character.AttributeManager.SpeedBoost);
             _movement.ForceHeadwind(character.Components.Rigidbody.velocity.x);
-            Gauge.Instance.DrainGauge(_drainAmount * Time.deltaTime);
+
+            character.PlayerGauge.DrainGauge(_drainAmount * Time.deltaTime);
 
             if(Invulnerability.IsInvincible == false)
             {
@@ -63,9 +65,14 @@ namespace Assets.Script.PlayableCharacters.States
 
         private void GaugeSetup(ICharacter character)
         {
-            Gauge.Instance.MaxGaugeAmount = character.AttributeManager.GaugeMaxAmount;
-            Gauge.Instance.OnEmptyGauge += HandleEmptyGauge => { character.playerManager.OnDeath(); };
+            character.PlayerGauge.MaxGaugeAmount = character.AttributeManager.GaugeMaxAmount;
+            character.PlayerGauge.OnEmptyGauge += HandleEmptyGauge;
             _drainAmount = character.AttributeManager.GaugeLossAmountPerSecond;
+        }
+
+        private void HandleEmptyGauge(Action action)
+        {
+            action();
         }
     }
 }

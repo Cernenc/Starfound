@@ -1,15 +1,12 @@
-﻿using Assets.Script.Core.Singleton;
-using Assets.Script.PlayableCharacters.Interfaces;
+﻿using Assets.Script.PlayableCharacters.Interfaces;
 using System;
 
 namespace Assets.Script.PlayableCharacters.Health
 {
-    public class Gauge : Singleton<Gauge>
+    public class Gauge
     {
-        private ICharacter Player { get; }
-
-        public Action<ICharacter> OnEmptyGauge;
-
+        public ICharacter Player { get; set; }
+        public Action<Action> OnEmptyGauge { get; set; }
         private double _max;
         public double MaxGaugeAmount
         {
@@ -38,8 +35,7 @@ namespace Assets.Script.PlayableCharacters.Health
             {
                 return;
             }
-
-            OnEmptyGauge?.Invoke(Player);
+            OnEmptyGauge(() => Player.playerManager.OnDeath());
         }
 
         public void FillGauge(float fuel)

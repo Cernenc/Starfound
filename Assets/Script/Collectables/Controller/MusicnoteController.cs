@@ -18,7 +18,7 @@ namespace Assets.Script.Collectables.Controller
 
         private void HandleCollect()
         {
-            _model.FillGauge(_view.FillAmount);
+            _model.FillGauge(_view.FillAmount, _view.Player);
             _view.AddToSpeedCounter();
             _view.Collect();
         }

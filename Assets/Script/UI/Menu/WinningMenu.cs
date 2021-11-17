@@ -30,8 +30,6 @@ public class WinningMenu : MonoBehaviour
 
     public void NextLevel()
     {
-        Loader loader = new Loader();
-        loader.LoadNextLevel();
     }
 
     public void RepeatLevel()

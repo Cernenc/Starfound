@@ -69,6 +69,7 @@ namespace Assets.Script.Core.Managers
         private void HandleDeath()
         {
             deathMenu.DeathMenuObject.SetActive(true);
+            deathMenu.LevelLost();
             animationManager.DeathAnimation();
             playerManager.Player.ChangeState(DyingState.Instance);
             CanPause = false;

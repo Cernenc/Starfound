@@ -1,6 +1,5 @@
 ﻿using Assets.Script.Enemies.Interfaces;
 using Assets.Script.PlayableCharacters.States;
-using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.Interfaces;
 using UnityEngine;
 
@@ -34,7 +33,7 @@ namespace Assets.Script.PlayableCharacters.Colliders
 
         private void GetHitBy(float damage)
         {
-            Gauge.Instance.LoseGaugeByAmount(damage);
+            Player.PlayerGauge.LoseGaugeByAmount(damage);
         }
     }
 }

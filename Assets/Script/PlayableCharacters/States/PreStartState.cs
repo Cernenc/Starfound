@@ -1,4 +1,5 @@
 ﻿using Assets.Script.Core.Managers;
+using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.Interfaces;
 using Assets.Script.PlayableCharacters.States.Support;
 using Assets.Script.Statemachine.Interfaces;
@@ -52,6 +53,7 @@ namespace Assets.Script.PlayableCharacters.States
         {
             character.Components.Rigidbody.isKinematic = false;
             character.Components.Rigidbody.useGravity = true;
+            character.PlayerGauge.CurrentGaugeAmount = character.PlayerGauge.MaxGaugeAmount;
         }
     }
 }

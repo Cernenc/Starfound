@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Star
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Star
-  <MovementSpeed>k__BackingField: 11
+  <MovementSpeed>k__BackingField: 8
   <JumpHeight>k__BackingField: 80
   <FallSpeed>k__BackingField: 30
-  <GaugeMaxAmount>k__BackingField: 100
+  <GaugeMaxAmount>k__BackingField: 50
   <GaugeLossAmountPerSecond>k__BackingField: 3.5
+  <SpeedBoost>k__BackingField: 0.75
   <IFrames>k__BackingField: 2

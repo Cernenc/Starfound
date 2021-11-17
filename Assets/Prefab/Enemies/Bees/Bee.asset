@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bee
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 15
-  <Speed>k__BackingField: 10
+  <Speed>k__BackingField: 42
   <ProjectileDamage>k__BackingField: 8
   <ProjectileInbetweenCooldown>k__BackingField: 0.5

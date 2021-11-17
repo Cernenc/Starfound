@@ -8,10 +8,5 @@ namespace Assets.Script.Scenes
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-
-        public void LoadNextLevel()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
     }
 }

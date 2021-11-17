@@ -5,12 +5,14 @@ using Assets.Script.Statemachine;
 using Assets.Script.Statemachine.Interfaces;
 using UnityEngine;
 using Assets.Script.Core.Managers;
+using Assets.Script.PlayableCharacters.Health;
 
 namespace Assets.Script.PlayableCharacters
 {
     public class Star : MonoBehaviour, ICharacter
     {
         public ICharacterComponents Components { get; set; }
+        public Gauge PlayerGauge { get; set; }
         public PlayerManager playerManager { get; set; }
         public AnimationManager animationManager { get; set; }
 
@@ -27,7 +29,6 @@ namespace Assets.Script.PlayableCharacters
 
         public void Construct(ICharacter character)
         {
-            
         }
 
         private void GetStatemachine()
@@ -43,9 +44,11 @@ namespace Assets.Script.PlayableCharacters
         }
 
         private void Start()
-        {         
+        {
             Components = GetComponent<CharacterComponents>();
             playerManager = FindObjectOfType<PlayerManager>();
+            PlayerGauge = new Gauge();
+            PlayerGauge.Player = this;
             if (playerManager != null)
             {
                 playerManager.Player = this;

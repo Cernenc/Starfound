@@ -1,5 +1,6 @@
 ﻿using Assets.Script.Scenes;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DeathMenu : MonoBehaviour
@@ -16,6 +17,12 @@ public class DeathMenu : MonoBehaviour
     private void Start()
     {
         DeathMenuObject.SetActive(false);
+    }
+
+    public void LevelLost()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(RepeatBtn.gameObject);
     }
 
     public void RepeatLevel()

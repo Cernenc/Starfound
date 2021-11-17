@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    /// <summary>
+    /// OnTriggerEnter gets called twice -> bandaid sln
+    /// </summary>
+    private bool _isColliding = false;
+    private void Start()
+    {
+        _isColliding = false;
+    }
     public void OnTriggerEnter(Collider other)
     {
-        var player = other.GetComponentInParent<ICharacter>();
+        if (_isColliding) return;
+        _isColliding = true;
+
+        var player = other.GetComponent<ICharacter>();
         LevelClear(player);
     }
 
     private void LevelClear(ICharacter player)
     {
-        PlayerManager manager = FindObjectOfType<PlayerManager>();
+        PlayerManager manager = player.playerManager;
         manager.OnLevelClear();
     }
 }

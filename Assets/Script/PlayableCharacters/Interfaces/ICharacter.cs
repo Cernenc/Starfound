@@ -1,5 +1,6 @@
 ﻿using Assets.Script.Core.Managers;
 using Assets.Script.PlayableCharacters.Attributes;
+using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.Statemachine.Interfaces;
 
 namespace Assets.Script.PlayableCharacters.Interfaces
@@ -12,5 +13,7 @@ namespace Assets.Script.PlayableCharacters.Interfaces
         int SpeedCounter { get; set; }
         PlayerManager playerManager { get; set; }
         AnimationManager animationManager { get; set; }
+
+        Gauge PlayerGauge { get; }
     }
 }
