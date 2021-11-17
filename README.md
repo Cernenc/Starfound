@@ -34,7 +34,7 @@ Stars abilities are:
 No. of Stack(s) / effect <br></br>
 One stack: destroys every enemy and projectile on screen. <br></br>
 Two stacks: collects all notes on screen. <br></br>
-Three stacks: opens a secret exit. <br></br>
+Three stacks: opens a secret exit -> yet to be implemented <br></br>
 
 ### 2. Health
 Your health or, to be more precise, your fuel. Star is running on fuel and loses same continually. After depleting all resources Star loses and explodes (think Megaman).
@@ -73,3 +73,9 @@ Current Specialnotes:
 - Speedupnote -> speeds up Star for x seconds by y amount
 - Spinnote -> creates a reflector for x seconds which deflects incoming projectiles
 - Powernote -> activates automatically when collected. Activates "Power of friendship"
+
+## State behaviour / Statemachine
+Every playable character as well as every enemy share one trait: they all act under the same [statemachine](https://github.com/Cernenc/Starfound/blob/main/Assets/Script/Statemachine/Statemachine.cs).<br />
+The statemachine controls the different behaviours of a character; first enter the state for different setups (called one time) -> execute the current state (through (Fixed)-Update) -> exit the current state and enter a new one. <br />
+Only one behaviour at a time can be run by a character/enemy. The [bee](https://github.com/Cernenc/Starfound/blob/main/Assets/Script/Enemies/Bees/States/BeeDefaultState.cs) shows an empty state class.
+
