@@ -109,6 +109,7 @@
     <Compile Include="Assets\Script\Installers\InventoryInstaller.cs" />
     <Compile Include="Assets\Script\Installers\MusicnoteInstaller.cs" />
     <Compile Include="Assets\Script\Inventories\Inventory.cs" />
+    <Compile Include="Assets\Script\Inventories\InventoryUI.cs" />
     <Compile Include="Assets\Script\Invulnerability.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Attributes\CharacterAttributeManager.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Attributes\CharacterComponents.cs" />

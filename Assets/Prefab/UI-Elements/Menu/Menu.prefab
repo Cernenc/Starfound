@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DeathMenuObject>k__BackingField: {fileID: 1351818174565558838}
   <RepeatBtn>k__BackingField: {fileID: 1351818175897270012}
-  <MenuBtn>k__BackingField: {fileID: 1351818175693720880}
+  <MenuBtn>k__BackingField: {fileID: 1351818175276769512}
 --- !u!114 &1351818174968844342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +268,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death_Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 4009086867541823653, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009086867615148905, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1351818174968844343}
+    - target: {fileID: 4009086867615148905, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RepeatLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009086867615148905, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009086867615148907, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: m_Name
+      value: Retry_Btn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f6484dd562bf1446bfb9cc973207596, type: 3}
 --- !u!1 &1351818174565558838 stripped
@@ -285,18 +310,6 @@ RectTransform:
 --- !u!114 &1351818175897270012 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4009086867615148905, guid: 3f6484dd562bf1446bfb9cc973207596,
-    type: 3}
-  m_PrefabInstance: {fileID: 2693640984317107605}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1351818175693720880 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4009086867541823653, guid: 3f6484dd562bf1446bfb9cc973207596,
     type: 3}
   m_PrefabInstance: {fileID: 2693640984317107605}
   m_PrefabAsset: {fileID: 0}
@@ -422,6 +435,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852958243897136186, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852958244336649699, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1351818174968844342}
+    - target: {fileID: 5852958244866568617, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84206c5508eda6249bf898467dca3732, type: 3}
@@ -589,6 +617,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1351818174968844340}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RepeatLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680522895511, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Name
+      value: Retry_Btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680533468684, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680533468684, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680533468684, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421680533468684, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249421681435952004, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d10715901bdf14993b9adf25441d93, type: 3}
