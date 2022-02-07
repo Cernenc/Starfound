@@ -29,7 +29,7 @@ namespace Assets.Script.PlayableCharacters.States
         {
             character.Components.Rigidbody.isKinematic = true;
             character.Components.Rigidbody.useGravity = false;
-            character.SpeedCounter = 0;
+            character.Manager.gameManager.SpeedCounter = 0;
         }
 
         public void Execute(ICharacter character)

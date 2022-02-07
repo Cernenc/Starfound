@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine.Events;
 
 namespace Assets.Script.Collectables.Interfaces
 {
     public interface ISpecialnote
     {
-        Action OnActivation { get; set; }
+        UnityEvent OnActivation { get; set; }
         void HandleActivation();
         IEnumerator Effect();
     }

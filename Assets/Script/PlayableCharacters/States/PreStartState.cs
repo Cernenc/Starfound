@@ -1,8 +1,8 @@
 ﻿using Assets.Script.Core.Managers;
-using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.Interfaces;
 using Assets.Script.PlayableCharacters.States.Support;
 using Assets.Script.Statemachine.Interfaces;
+using Zenject;
 
 namespace Assets.Script.PlayableCharacters.States
 {
@@ -22,38 +22,29 @@ namespace Assets.Script.PlayableCharacters.States
             }
         }
 
-        private StartingPoint _startPosition;
-
+        private StartingPointBehaviour _startingPoint;
         public void Enter(ICharacter character)
         {
+            _startingPoint = character.Manager.gameManager.StartingPoint;
+
             character.Components.Rigidbody.isKinematic = true;
             character.Components.Rigidbody.useGravity = false;
-
-            if (character.playerManager == null)
-            {
-                character.ChangeState(FlyingState.Instance);
-            }
-
-            _startPosition = character.playerManager.StartPosition;
         }
 
         public void Execute(ICharacter character)
         {
-            if (!_startPosition)
+            if(character.Manager.gameManager.StartingPoint == null)
             {
                 character.ChangeState(FlyingState.Instance);
+                return;
             }
-            else
-            {
-                character.Components.Rigidbody.position = _startPosition.AtStartPosition(character.Components.Rigidbody.position, character);
-            }
+            character.Components.Rigidbody.position = _startingPoint.MoveTowardsStart(character.Components.Rigidbody.position, character);
         }
 
         public void Exit(ICharacter character)
         {
             character.Components.Rigidbody.isKinematic = false;
             character.Components.Rigidbody.useGravity = true;
-            character.PlayerGauge.CurrentGaugeAmount = character.PlayerGauge.MaxGaugeAmount;
         }
     }
 }

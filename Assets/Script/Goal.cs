@@ -12,6 +12,7 @@ public class Goal : MonoBehaviour
     {
         _isColliding = false;
     }
+
     public void OnTriggerEnter(Collider other)
     {
         if (_isColliding) return;
@@ -23,7 +24,6 @@ public class Goal : MonoBehaviour
 
     private void LevelClear(ICharacter player)
     {
-        PlayerManager manager = player.playerManager;
-        manager.OnLevelClear();
+        FindObjectOfType<ManagerDependencyInjection>().playerManager.OnLevelClear.Invoke();
     }
 }

@@ -1,20 +1,25 @@
 ﻿using Assets.Script.Core.Managers;
-using Assets.Script.PlayableCharacters.Health;
-using Assets.Script.PlayableCharacters.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Assets.Script.UI
 {
     public class GaugeUI : MonoBehaviour
     {
         public Image GaugeImage { get; set; }
-        ICharacter Player { get; set; }
+
+        private IGameManager gameManager { get; set; }
 
         private void Start()
         {
             GaugeImage = GetComponent<Image>();
-            Player = FindObjectOfType<PlayerManager>().Player;
+        }
+
+        [Inject]
+        public void Construct(IGameManager gameManager)
+        {
+            this.gameManager = gameManager;
         }
 
         public void Update()
@@ -24,7 +29,7 @@ namespace Assets.Script.UI
                 return;
             }
 
-            GaugeImage.fillAmount = (float)(Player.PlayerGauge.CurrentGaugeAmount / Player.PlayerGauge.MaxGaugeAmount);
+            GaugeImage.fillAmount = (float)(gameManager.Gauge.CurrentGaugeAmount / gameManager.Gauge.MaxGaugeAmount);
         }
     }
 }

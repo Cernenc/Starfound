@@ -1,39 +1,79 @@
 ﻿using Assets.Script.Inventories;
+using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.States;
+using Assets.Script.PlayableCharacters.States.Support;
 using Assets.Script.UI.Menu;
 using UnityEngine;
 using Zenject;
 
 namespace Assets.Script.Core.Managers
 {
-    public class GameManager : GameBehaviour
+    public interface IGameManager
+    {
+        void Setup();
+        void GaugeSetup();
+        void PlayerEventsSetup();
+        IGauge Gauge { get; set; }
+        bool CanPause { get; }
+        IInventory PlayerInventory { get; set; }
+        PauseMenu pauseMenu { get; set; }
+        WinningMenu winningMenu { get; set; }
+        DeathMenu deathMenu { get; set; }
+        int Score { get; set; }
+        int SpeedCounter { get; set; }
+        StartingPointBehaviour StartingPoint { get; set; }
+        Invulnerability InvulnerableBehaviour { get; set; }
+    }
+
+    public class GameManager : IGameManager
     {
         public bool CanPause { get; private set; }
 
-        private Invulnerability Invincibility { get; set; }
-
-        [field: SerializeField]
+        public Invulnerability InvulnerableBehaviour { get; set; }
         public PauseMenu pauseMenu { get; set; }
-
-        [field: SerializeField]
         public WinningMenu winningMenu { get; set; }
-
-        [field: SerializeField]
         public DeathMenu deathMenu { get; set; }
 
         [Inject]
         public IInventory PlayerInventory { get; set; }
 
-        private void Awake()
+        public int Score { get; set; }
+
+        public int SpeedCounter { get; set; } = 0;
+
+        [Inject]
+        public IGauge Gauge { get; set; }
+
+        public StartingPointBehaviour StartingPoint { get; set; }
+
+        [Inject]
+        private IPlayerManager playerManager { get; set; }
+
+        [Inject]
+        private IAnimationManager animationManager { get; set; }
+
+        public void Setup()
         {
-            playerManager.OnSetPlayer += HandleSetPlayer;
-            playerManager.OnDeath += HandleDeath;
-            playerManager.OnLevelClear += HandleLevelCleared;
-            playerManager.OnInvincibility += HandleInvincibility;
-            playerManager.OnDamageable += HandleCanBeDamaged;
-            Invincibility = new Invulnerability();
+            InvulnerableBehaviour = new Invulnerability();
             CanPause = true;
             pauseMenu.OnPauseGame += HandlePauseGame;
+        }
+
+        public void GaugeSetup()
+        {
+            Gauge = new Gauge();
+            Gauge.MaxGaugeAmount = playerManager.Player.AttributeManager.GaugeMaxAmount;
+            Gauge.CurrentGaugeAmount = Gauge.MaxGaugeAmount;
+            Gauge.GaugeLossAmountPerSecond = playerManager.Player.AttributeManager.GaugeLossAmountPerSecond;
+            Gauge.OnEmptyGauge += HandleDeath;
+        }
+
+        public void PlayerEventsSetup()
+        {
+            playerManager.OnSetPlayer += HandleSetPlayer;
+            playerManager.OnInvincibility += HandleInvincibility;
+            playerManager.OnIsDamageable += HandleCanBeDamaged;
+            playerManager.OnLevelClear += HandleLevelCleared;
         }
 
         private void HandleSetPlayer()
@@ -54,7 +94,6 @@ namespace Assets.Script.Core.Managers
 
         private void HandleInvincibility()
         {
-            StartCoroutine(Invincibility.FlashCo(playerManager.Player.AttributeManager.IFrames, 0.15f, animationManager.Flashing));
         }
 
         private void HandleLevelCleared()

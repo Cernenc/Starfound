@@ -104,10 +104,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 6746821822618009799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9e3ee49eacc3dd42a1a34a6c892c86e, type: 3}
+  m_Script: {fileID: 11500000, guid: 795339376dfd4984db13e1e648b38e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <FillAmount>k__BackingField: 10
+  <OnCollect>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6867824450527353017}
+        m_MethodName: HideNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4676447721944906497
 MonoBehaviour:
   m_ObjectHideFlags: 0

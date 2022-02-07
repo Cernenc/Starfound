@@ -1,31 +1,26 @@
-﻿using Assets.Script.PlayableCharacters.Interfaces;
-using System;
+﻿using System;
 
 namespace Assets.Script.PlayableCharacters.Health
 {
-    public class Gauge
+    public interface IGauge
     {
-        public ICharacter Player { get; set; }
-        public Action<Action> OnEmptyGauge { get; set; }
-        private double _max;
-        public double MaxGaugeAmount
-        {
-            get => _max;
-            set
-            {
-                _max = value;
-                if (CurrentGaugeAmount == 0)
-                {
-                    CurrentGaugeAmount = _max;
-                }
-            }
-        }
-
+        double MaxGaugeAmount { get; set; }
+        double CurrentGaugeAmount { get; set; }
+        float GaugeLossAmountPerSecond { get; set; }
+        Action OnEmptyGauge { get; set; }
+        void DrainGauge(float deltaTime);
+        void FillGauge(float fuel);
+    }
+    public class Gauge : IGauge
+    {
+        public Action OnEmptyGauge { get; set; }
+        public double MaxGaugeAmount { get; set; }
         public double CurrentGaugeAmount { get; set; }
+        public float GaugeLossAmountPerSecond { get; set; }
 
-        public void DrainGauge(float gaugeLossAmountPerSecond)
+        public void DrainGauge(float deltaTime)
         {
-            CurrentGaugeAmount -= gaugeLossAmountPerSecond;
+            CurrentGaugeAmount -= GaugeLossAmountPerSecond * deltaTime;
             CheckForEmptyGauge();
         }
 
@@ -35,7 +30,7 @@ namespace Assets.Script.PlayableCharacters.Health
             {
                 return;
             }
-            OnEmptyGauge(() => Player.playerManager.OnDeath());
+            OnEmptyGauge.Invoke();
         }
 
         public void FillGauge(float fuel)

@@ -2,6 +2,8 @@
 using Assets.Script.PlayableCharacters.States;
 using Assets.Script.PlayableCharacters.Interfaces;
 using UnityEngine;
+using Assets.Script.Core.Managers;
+using Zenject;
 
 namespace Assets.Script.PlayableCharacters.Colliders
 {
@@ -33,7 +35,7 @@ namespace Assets.Script.PlayableCharacters.Colliders
 
         private void GetHitBy(float damage)
         {
-            Player.PlayerGauge.LoseGaugeByAmount(damage);
+            //Manager.PlayerGauge.LoseGaugeByAmount(damage);
         }
     }
 }

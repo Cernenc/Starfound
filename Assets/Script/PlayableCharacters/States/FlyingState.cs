@@ -4,6 +4,8 @@ using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.States.Support;
 using UnityEngine;
 using System;
+using Zenject;
+using Assets.Script.Core.Managers;
 
 namespace Assets.Script.PlayableCharacters.States
 {
@@ -28,51 +30,38 @@ namespace Assets.Script.PlayableCharacters.States
             _instance = this;
         }
 
-        private float _drainAmount;
         private Movement _movement;
+
         public void Enter(ICharacter character)
         {
-            GaugeSetup(character);
             _movement = new Movement();
             _movement.Character = character;
 
             Cam.CameraMovement.CanFollow = true;
-            character.animationManager.MoveAnimation();
+            character.Manager.animationManager.MoveAnimation();
 
             if (Invulnerability.IsInvincible)
             {
-                character.playerManager.OnInvincibility();
+                character.Manager.playerManager.OnInvincibility.Invoke();
             }
         }
 
         public void Execute(ICharacter character)
         {
-            _movement.ForceMovement(character.AttributeManager.MovementSpeed + character.SpeedCounter * character.AttributeManager.SpeedBoost);
+            _movement.ForceMovement(character.AttributeManager.MovementSpeed + character.Manager.gameManager.SpeedCounter * character.AttributeManager.SpeedBoost);
             _movement.ForceHeadwind(character.Components.Rigidbody.velocity.x);
 
-            character.PlayerGauge.DrainGauge(_drainAmount * Time.deltaTime);
+            character.Manager.gameManager.Gauge.DrainGauge(Time.deltaTime);
 
             if(Invulnerability.IsInvincible == false)
             {
-                character.playerManager.OnDamageable();
+                character.Manager.playerManager.OnIsDamageable.Invoke();
             }
         }
 
         public void Exit(ICharacter character)
         {
             Cam.CameraMovement.CanFollow = false;
-        }
-
-        private void GaugeSetup(ICharacter character)
-        {
-            character.PlayerGauge.MaxGaugeAmount = character.AttributeManager.GaugeMaxAmount;
-            character.PlayerGauge.OnEmptyGauge += HandleEmptyGauge;
-            _drainAmount = character.AttributeManager.GaugeLossAmountPerSecond;
-        }
-
-        private void HandleEmptyGauge(Action action)
-        {
-            action();
         }
     }
 }

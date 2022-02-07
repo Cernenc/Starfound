@@ -18,7 +18,7 @@ namespace Assets.Script.Inventories
         public List<ISpecialnote> SpinnoteList { get; }
         public List<ISpecialnote> SpeedupnoteList { get; }
 
-        private Inventory()
+        public Inventory()
         {
             if(PowernoteList == null)
             {

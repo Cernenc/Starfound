@@ -1,6 +1,4 @@
-﻿//using Assets.Script.Collectables.Controller;
-using Assets.Script.Collectables.Model;
-using Zenject;
+﻿using Zenject;
 
 namespace Assets.Script.Installers
 {
@@ -8,9 +6,7 @@ namespace Assets.Script.Installers
     {
         public override void InstallBindings()
         {
-            //this.Container.Bind<MusicnoteController>().AsSingle();
-            //this.Container.Bind<SpecialnoteController>().AsSingle();
-            this.Container.Bind<IMusicnoteModel>().To<MusicnoteModel>().AsSingle();
+            
         }
     }
 }

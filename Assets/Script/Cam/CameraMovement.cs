@@ -17,9 +17,10 @@ namespace Assets.Script.Cam
         private Collider _bottom = null;
         [SerializeField]
         private Collider _ceiling = null;
+
         private void Start()
         {
-            Target = FindObjectOfType<PlayerManager>().Player;
+            Target = FindObjectOfType<ManagerDependencyInjection>().playerManager.Player;
         }
 
         private void LateUpdate()

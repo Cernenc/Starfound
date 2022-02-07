@@ -19,7 +19,7 @@ namespace Assets.Script.PlayableCharacters.Colliders
             if(note != null)
             {
                 note.Player = _player;
-                note.OnCollect();
+                note.Collect();
             }
         }
     }

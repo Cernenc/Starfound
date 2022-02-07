@@ -20,7 +20,7 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
         public void Start()
         {
             Hive = GetComponentInParent<BeeHive>();
-            Player = FindObjectOfType<PlayerManager>().Player;
+            Player = FindObjectOfType<ManagerDependencyInjection>().playerManager.Player;
             TargetPosition = Player.Components.Rigidbody.position;
             MoveDirection = (TargetPosition - transform.position).normalized;
             _timer = Time.time;

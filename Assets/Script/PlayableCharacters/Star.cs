@@ -5,19 +5,14 @@ using Assets.Script.Statemachine;
 using Assets.Script.Statemachine.Interfaces;
 using UnityEngine;
 using Assets.Script.Core.Managers;
-using Assets.Script.PlayableCharacters.Health;
 
 namespace Assets.Script.PlayableCharacters
 {
     public class Star : MonoBehaviour, ICharacter
     {
+        public ManagerDependencyInjection Manager { get; private set; }
         public ICharacterComponents Components { get; set; }
-        public Gauge PlayerGauge { get; set; }
-        public PlayerManager playerManager { get; set; }
-        public AnimationManager animationManager { get; set; }
-
-        public int SpeedCounter { get; set; } = 0;
-
+        
         [SerializeField]
         private CharacterAttributeManager _attributeManager = null;
         public ICharacterAttributeManager AttributeManager
@@ -26,10 +21,6 @@ namespace Assets.Script.PlayableCharacters
         }
 
         private Statemachine<IEnterExecuteExit<ICharacter>, ICharacter> PlayerState { get; set; }
-
-        public void Construct(ICharacter character)
-        {
-        }
 
         private void GetStatemachine()
         {
@@ -43,20 +34,15 @@ namespace Assets.Script.PlayableCharacters
             PlayerState.ChangeState(newState);
         }
 
-        private void Start()
+        private void Awake()
         {
             Components = GetComponent<CharacterComponents>();
-            playerManager = FindObjectOfType<PlayerManager>();
-            PlayerGauge = new Gauge();
-            PlayerGauge.Player = this;
-            if (playerManager != null)
-            {
-                playerManager.Player = this;
-            }
-            animationManager = FindObjectOfType<AnimationManager>();
+        }
+        private void Start()
+        {
+            Manager = FindObjectOfType<ManagerDependencyInjection>();
             GetStatemachine();
         }
-
         private void FixedUpdate()
         {
             PlayerState.ExecuteCurrentState();

@@ -6,6 +6,7 @@ namespace Assets.Script.PlayableCharacters.Attributes
     {
         string Name { get; set; }
         float MovementSpeed { get; set; }
+        float FallBackSpeed { get; set; }
         float JumpHeight { get; set; }
         float FallSpeed { get; set; }
         float GaugeMaxAmount { get; set; }
@@ -22,6 +23,9 @@ namespace Assets.Script.PlayableCharacters.Attributes
 
         [field: SerializeField]
         public float MovementSpeed { get; set; }
+
+        [field: SerializeField]
+        public float FallBackSpeed { get; set; }
 
         [field: SerializeField]
         public float JumpHeight { get; set; }
