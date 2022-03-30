@@ -12,9 +12,6 @@ GameObject:
   - component: {fileID: 1351818174968844337}
   - component: {fileID: 1351818174968844336}
   - component: {fileID: 1351818174968844339}
-  - component: {fileID: 1351818174968844340}
-  - component: {fileID: 1351818174968844343}
-  - component: {fileID: 1351818174968844342}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -104,53 +101,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1351818174968844340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351818174968844349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d6255b2dacdbb47934beacbba90b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <WinningMenuObject>k__BackingField: {fileID: 1351818174360637309}
-  <NextLevelBtn>k__BackingField: {fileID: 1351818173965325664}
-  <RepeatBtn>k__BackingField: {fileID: 1351818174093165561}
-  <MenuBtn>k__BackingField: {fileID: 1351818175276769512}
---- !u!114 &1351818174968844343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351818174968844349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1cdc3dd7953674c810a6fd8c563417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <DeathMenuObject>k__BackingField: {fileID: 1351818174565558838}
-  <RepeatBtn>k__BackingField: {fileID: 1351818175897270012}
-  <MenuBtn>k__BackingField: {fileID: 1351818175276769512}
---- !u!114 &1351818174968844342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351818174968844349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013f96faeb96b334bba26b7a17fc0fe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <PauseMenuObject>k__BackingField: {fileID: 1351818175633439400}
-  _pauseResumeBtn: {fileID: 1351818174555719285}
-  _pauseOptionsBtn: {fileID: 1351818174027919935}
-  _pauseMenuBtn: {fileID: 1351818175188047788}
 --- !u!1001 &2693640984317107605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,6 +108,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1351818174968844338}
     m_Modifications:
+    - target: {fileID: -1565551855037555834, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: <DeathMenuObject>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818174584146048}
+    - target: {fileID: -1565551855037555834, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: <RepeatBtn>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818175897270012}
+    - target: {fileID: -1565551855037555834, guid: 3f6484dd562bf1446bfb9cc973207596,
+        type: 3}
+      propertyPath: <MenuBtn>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818175276769512}
     - target: {fileID: 4009086866262472610, guid: 3f6484dd562bf1446bfb9cc973207596,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -277,7 +242,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1351818174968844343}
+      objectReference: {fileID: 0}
     - target: {fileID: 4009086867615148905, guid: 3f6484dd562bf1446bfb9cc973207596,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -295,15 +260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f6484dd562bf1446bfb9cc973207596, type: 3}
---- !u!1 &1351818174565558838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4009086866262472611, guid: 3f6484dd562bf1446bfb9cc973207596,
-    type: 3}
-  m_PrefabInstance: {fileID: 2693640984317107605}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1351818174565558839 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4009086866262472610, guid: 3f6484dd562bf1446bfb9cc973207596,
+    type: 3}
+  m_PrefabInstance: {fileID: 2693640984317107605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1351818174584146048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4009086866503947541, guid: 3f6484dd562bf1446bfb9cc973207596,
     type: 3}
   m_PrefabInstance: {fileID: 2693640984317107605}
   m_PrefabAsset: {fileID: 0}
@@ -445,23 +410,43 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1351818174968844342}
+      objectReference: {fileID: 0}
     - target: {fileID: 5852958244866568617, guid: 84206c5508eda6249bf898467dca3732,
         type: 3}
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137951644271883494, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: <PauseMenuObject>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818174987626293}
+    - target: {fileID: 9137951644271883494, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: _pauseResumeBtn
+      value: 
+      objectReference: {fileID: 1351818174555719285}
+    - target: {fileID: 9137951644271883494, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: _pauseOptionsBtn
+      value: 
+      objectReference: {fileID: 1351818174027919935}
+    - target: {fileID: 9137951644271883494, guid: 84206c5508eda6249bf898467dca3732,
+        type: 3}
+      propertyPath: _pauseMenuBtn
+      value: 
+      objectReference: {fileID: 1351818175188047788}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84206c5508eda6249bf898467dca3732, type: 3}
---- !u!1 &1351818175633439400 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5852958243250436414, guid: 84206c5508eda6249bf898467dca3732,
-    type: 3}
-  m_PrefabInstance: {fileID: 4898647510407365526}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1351818175633439401 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5852958243250436415, guid: 84206c5508eda6249bf898467dca3732,
+    type: 3}
+  m_PrefabInstance: {fileID: 4898647510407365526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1351818174987626293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5852958243695043747, guid: 84206c5508eda6249bf898467dca3732,
     type: 3}
   m_PrefabInstance: {fileID: 4898647510407365526}
   m_PrefabAsset: {fileID: 0}
@@ -642,7 +627,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1351818174968844340}
+      objectReference: {fileID: 0}
     - target: {fileID: 5249421680522895509, guid: 91d10715901bdf14993b9adf25441d93,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -693,17 +678,37 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7585770307606125981, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: <WinningMenuObject>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818175583640002}
+    - target: {fileID: 7585770307606125981, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: <NextLevelBtn>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818173965325664}
+    - target: {fileID: 7585770307606125981, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: <RepeatBtn>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818174093165561}
+    - target: {fileID: 7585770307606125981, guid: 91d10715901bdf14993b9adf25441d93,
+        type: 3}
+      propertyPath: <MenuBtn>k__BackingField
+      value: 
+      objectReference: {fileID: 1351818175276769512}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91d10715901bdf14993b9adf25441d93, type: 3}
---- !u!1 &1351818174360637309 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5249421680255593489, guid: 91d10715901bdf14993b9adf25441d93,
-    type: 3}
-  m_PrefabInstance: {fileID: 6492834154096403308}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1351818174360637298 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5249421680255593502, guid: 91d10715901bdf14993b9adf25441d93,
+    type: 3}
+  m_PrefabInstance: {fileID: 6492834154096403308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1351818175583640002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5249421681078106798, guid: 91d10715901bdf14993b9adf25441d93,
     type: 3}
   m_PrefabInstance: {fileID: 6492834154096403308}
   m_PrefabAsset: {fileID: 0}

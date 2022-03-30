@@ -5,6 +5,7 @@ namespace Assets.Script.PlayableCharacters.Attributes
     public interface ICharacterAttributeManager
     {
         string Name { get; set; }
+        float BaseSpeed { get; set; }
         float MovementSpeed { get; set; }
         float FallBackSpeed { get; set; }
         float JumpHeight { get; set; }
@@ -20,6 +21,9 @@ namespace Assets.Script.PlayableCharacters.Attributes
     {
         [field: SerializeField]
         public string Name { get; set; }
+
+        [field: SerializeField]
+        public float BaseSpeed { get; set; }
 
         [field: SerializeField]
         public float MovementSpeed { get; set; }

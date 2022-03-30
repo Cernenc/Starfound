@@ -1,11 +1,7 @@
 ﻿using Assets.Script.PlayableCharacters.Interfaces;
 using Assets.Script.Statemachine.Interfaces;
-using Assets.Script.PlayableCharacters.Health;
 using Assets.Script.PlayableCharacters.States.Support;
 using UnityEngine;
-using System;
-using Zenject;
-using Assets.Script.Core.Managers;
 
 namespace Assets.Script.PlayableCharacters.States
 {
@@ -31,37 +27,28 @@ namespace Assets.Script.PlayableCharacters.States
         }
 
         private Movement _movement;
-
+        private Vector3 _playerMovement;
         public void Enter(ICharacter character)
         {
             _movement = new Movement();
-            _movement.Character = character;
-
-            Cam.CameraMovement.CanFollow = true;
-            character.Manager.animationManager.MoveAnimation();
-
-            if (Invulnerability.IsInvincible)
-            {
-                character.Manager.playerManager.OnInvincibility.Invoke();
-            }
+            _movement.PlayerRigidbody = character.Components.Rigidbody;
+            Cam.GameCamera.CanFollow = true;
         }
 
         public void Execute(ICharacter character)
         {
-            _movement.ForceMovement(character.AttributeManager.MovementSpeed + character.Manager.gameManager.SpeedCounter * character.AttributeManager.SpeedBoost);
-            _movement.ForceHeadwind(character.Components.Rigidbody.velocity.x);
-
-            character.Manager.gameManager.Gauge.DrainGauge(Time.deltaTime);
-
-            if(Invulnerability.IsInvincible == false)
-            {
-                character.Manager.playerManager.OnIsDamageable.Invoke();
-            }
+            _movement.HorizontalSpeed = character.AttributeManager.BaseSpeed;
+            _movement.Limit = _movement.PlayerRigidbody.velocity.x;
+            var horizontal = character.Horizontal * character.AttributeManager.MovementSpeed + (character.AttributeManager.BaseSpeed + character.SpeedCounter * character.AttributeManager.SpeedBoost);
+            var vertical = character.Vertical * character.AttributeManager.JumpHeight;
+            _playerMovement = new Vector3(horizontal, vertical);
+            character.Components.Rigidbody.AddForce(_playerMovement);
+            _movement.ForceHeadwind();
         }
 
         public void Exit(ICharacter character)
         {
-            Cam.CameraMovement.CanFollow = false;
+            Cam.GameCamera.CanFollow = false;
         }
     }
 }

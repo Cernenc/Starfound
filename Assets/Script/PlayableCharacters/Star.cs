@@ -4,13 +4,13 @@ using Assets.Script.PlayableCharacters.Interfaces;
 using Assets.Script.Statemachine;
 using Assets.Script.Statemachine.Interfaces;
 using UnityEngine;
-using Assets.Script.Core.Managers;
+using Assets.Script.PlayableCharacters.States.Support;
+using UnityEngine.Events;
 
 namespace Assets.Script.PlayableCharacters
 {
     public class Star : MonoBehaviour, ICharacter
     {
-        public ManagerDependencyInjection Manager { get; private set; }
         public ICharacterComponents Components { get; set; }
         
         [SerializeField]
@@ -19,6 +19,13 @@ namespace Assets.Script.PlayableCharacters
         {
             get => _attributeManager;
         }
+
+        public int SpeedCounter { get; set; }
+        public float Horizontal { get; set; } = 1;
+        public float Vertical { get; set; }
+        public bool IsInvincible { get; set; }
+
+        public StartingPointBehaviour StartingPoint { get; set; }
 
         private Statemachine<IEnterExecuteExit<ICharacter>, ICharacter> PlayerState { get; set; }
 
@@ -34,15 +41,12 @@ namespace Assets.Script.PlayableCharacters
             PlayerState.ChangeState(newState);
         }
 
-        private void Awake()
-        {
-            Components = GetComponent<CharacterComponents>();
-        }
         private void Start()
         {
-            Manager = FindObjectOfType<ManagerDependencyInjection>();
+            Components = GetComponent<CharacterComponents>();
             GetStatemachine();
         }
+
         private void FixedUpdate()
         {
             PlayerState.ExecuteCurrentState();

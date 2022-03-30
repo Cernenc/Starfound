@@ -1,13 +1,12 @@
-﻿using Assets.Script.PlayableCharacters.Interfaces;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Script.PlayableCharacters.States.Support
 {
     public class StartingPointBehaviour : MonoBehaviour
     {
-        public Vector2 StartPos { get; set; }
+        private Vector2 StartPos { get; set; }
 
-        public Vector3 MoveTowardsStart(Vector2 playerPosition, ICharacter character)
+        public Vector3 MoveTowardsStart(Vector2 playerPosition, Interfaces.ICharacter character)
         {
             if (AtStartPosition(playerPosition))
             {

@@ -1,5 +1,6 @@
 ﻿using Assets.Script.Collectables.Interfaces;
 using Assets.Script.Core.Managers;
+using Assets.Script.Events;
 using Assets.Script.Inventories;
 using Assets.Script.PlayableCharacters.Interfaces;
 using System.Collections;
@@ -12,14 +13,15 @@ namespace Assets.Script.Collectables.View.Specialnotes
     public class Speedupnote : MonoBehaviour, IMusicnote, ISpecialnote
     {
         [field: SerializeField]
-        public float FillAmount { get; set; }
-        public int SpeedCounter { get; } = 8;
+        public double ScoreAmount { get; private set; } = 100;
+        [field: SerializeField]
+        public float FillAmount { get; private set; } = 10;
+        [field: SerializeField]
+        public int SpeedCounter { get; private set; } = 4;
 
         [SerializeField]
         private float _effectTimer = 0;
 
-        [field: SerializeField]
-        public UnityEvent OnCollect { get; set; }
         [field: SerializeField]
         public UnityEvent OnActivation { get; set; }
 
@@ -28,41 +30,19 @@ namespace Assets.Script.Collectables.View.Specialnotes
         [Inject]
         private IInventory inventory { get; set; }
 
-        public ICharacter Player { get; set; }
-
-        public Musicnote MusicnoteLogic { get; set; }
-        public IGameManager gameManager { get; set; }
+        public PlayableCharacters.Interfaces.ICharacter Player { get; set; }
 
         [Inject]
-        public void Construct(IGameManager gameManager)
-        {
-            this.gameManager = gameManager;
-        }
+        private IPlayerManager PlayerManager { get; set; }
 
         private void Start()
         {
-            MusicnoteLogic = new Musicnote();
-            MusicnoteLogic.Score = 0;
-            MusicnoteLogic.SpeedCounter = SpeedCounter;
-            MusicnoteLogic.FillAmount = FillAmount;
-            MusicnoteLogic.OnCollect += HandleCollect;
             Components = GetComponent<IMusicnoteComponents>();
         }
 
-        private void HandleCollect()
+        public void Collect(double d, float f, int i)
         {
-            OnCollect.Invoke();
-        }
-
-        public void Collect()
-        {
-            MusicnoteLogic.AddNote(gameManager);
             inventory.AddItem(inventory.SpeedupnoteList, this);
-        }
-
-        public void HideItem()
-        {
-            this.gameObject.SetActive(false);
         }
 
         public IEnumerator Effect()
@@ -74,13 +54,15 @@ namespace Assets.Script.Collectables.View.Specialnotes
              * if over max speed => contact damage to low class enemies (ant, bees), take no damage
              * go back to current speed
             */
-            var temp = Player.AttributeManager.MovementSpeed;
-            Player.AttributeManager.MovementSpeed *= 2;
+
+            //Player = PlayerManager.Player;
+            var temp = Player.AttributeManager.BaseSpeed;
+            Player.AttributeManager.BaseSpeed *= 2;
 
             yield return new WaitForSeconds(_effectTimer);
 
-            Player.AttributeManager.MovementSpeed = temp;
-            HideItem();
+            Player.AttributeManager.BaseSpeed = temp;
+            HideNote();
         }
 
         public void HandleActivation()
@@ -99,6 +81,11 @@ namespace Assets.Script.Collectables.View.Specialnotes
 
         public void AddToSpeedCounter()
         {
+        }
+
+        public void HideNote()
+        {
+            GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

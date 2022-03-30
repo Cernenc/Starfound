@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -19,7 +20,8 @@ namespace Assets.Script.UI.Menu
         [SerializeField]
         private Button _pauseMenuBtn = null;
 
-        public Action OnPauseGame { get; set; }
+        [field: SerializeField]
+        public UnityEvent OnPauseGame { get; set; }
 
         void Start()
         {

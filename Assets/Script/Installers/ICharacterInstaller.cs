@@ -7,7 +7,7 @@ namespace Assets.Script.Installers
     {
         public override void InstallBindings()
         {
-            this.Container.Bind<ICharacter>().To<PlayableCharacters.Star>().AsSingle();
+            this.Container.Bind<PlayableCharacters.Interfaces.ICharacter>().AsSingle();
         }
     }
 }

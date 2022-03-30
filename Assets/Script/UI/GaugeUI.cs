@@ -9,17 +9,12 @@ namespace Assets.Script.UI
     {
         public Image GaugeImage { get; set; }
 
-        private IGameManager gameManager { get; set; }
+        [Inject]
+        private IPlayerManager playerManager { get; set; }
 
         private void Start()
         {
             GaugeImage = GetComponent<Image>();
-        }
-
-        [Inject]
-        public void Construct(IGameManager gameManager)
-        {
-            this.gameManager = gameManager;
         }
 
         public void Update()
@@ -29,7 +24,7 @@ namespace Assets.Script.UI
                 return;
             }
 
-            GaugeImage.fillAmount = (float)(gameManager.Gauge.CurrentGaugeAmount / gameManager.Gauge.MaxGaugeAmount);
+            //GaugeImage.fillAmount = (float)(playerManager.PlayerGauge.CurrentGaugeAmount / playerManager.PlayerGauge.MaxGaugeAmount);
         }
     }
 }

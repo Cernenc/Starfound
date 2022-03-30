@@ -1,4 +1,5 @@
 ﻿using Assets.Script.Core.Managers;
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -9,13 +10,9 @@ namespace Assets.Script.Core.Managers
 {
     public interface IAnimationManager
     {
-        Animator PlayerAnimator { get; set; }
+        void SpecialMoveAnimation();
         void Flashing();
-        void ScaleModelTo(Vector3 scale);
-        void IdleAnimation();
-        void MoveAnimation();
-        void HitAnimation();
-        void DeathAnimation();
+        Animator PlayerAnimator { get; set; }
     }
 
     public class AnimationManager : IAnimationManager
@@ -23,7 +20,7 @@ namespace Assets.Script.Core.Managers
         public Animator PlayerAnimator { get; set; }
 
         [Inject]
-        private IPlayerManager playerManager { get; set; }
+        private IPlayerManager playerManager;
 
         public void Flashing()
         {
@@ -71,6 +68,10 @@ namespace Assets.Script.Core.Managers
             PlayerAnimator.SetBool("IsMoving", false);
             PlayerAnimator.SetBool("IsHit", false);
             PlayerAnimator.SetBool("IsDead", true);
+        }
+        public void SpecialMoveAnimation()
+        {
+
         }
     }
 }

@@ -1,27 +1,23 @@
-﻿using Assets.Script.PlayableCharacters.Interfaces;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Script.PlayableCharacters.States.Support
 {
     public class Movement
     {
-        public ICharacter Character { private get; set; }
-        public static float VerticalMovement { get; set; } = 0;
-        public void ForceMovement(float horizontalMovement)
-        {
-            Character.Components.Rigidbody.AddForce(new Vector3(horizontalMovement, VerticalMovement));
-        }
+        public float Limit { private get; set; }
+        public float HorizontalSpeed { private get; set; }
+        public Rigidbody PlayerRigidbody { get; set; }
 
-        public void ForceHeadwind(float limit)
+        public void ForceHeadwind()
         {
             float forceAmount = 0;
-            float movementSpeed = Character.AttributeManager.MovementSpeed;
-            if (limit >= movementSpeed)
+            
+            if (Limit >= HorizontalSpeed)
             {
-                forceAmount = -(limit - movementSpeed);
+                forceAmount = -(Limit - HorizontalSpeed);
             }
 
-            Character.Components.Rigidbody.AddForce(new Vector3(forceAmount, 0));
+            PlayerRigidbody.AddForce(new Vector3(forceAmount, 0));
         }
     }
 }

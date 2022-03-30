@@ -1,36 +1,31 @@
-﻿using Assets.Script.Core.Managers;
-using System;
+﻿using Assets.Script.Collectables.Interfaces;
+using Assets.Script.Core.Managers;
+using Assets.Script.Events;
+using UnityEngine;
+using UnityEngine.Events;
+using Zenject;
 
-namespace Assets.Script.Collectables
+namespace Assets.Script.Collectables.View
 {
-    public class Musicnote
+    public class Musicnote : MonoBehaviour, IMusicnote
     {
-        public Action OnCollect { get; set; }
-        public int Score { get; set; }
-        public float FillAmount { private get; set; }
-        public int SpeedCounter { get; set; }
-        
-        public void AddNote(IGameManager gameManager)
+        [field: SerializeField]
+        public double ScoreAmount { get; private set; } = 50;
+        [field: SerializeField]
+        public float FillAmount { get; private set; } = 10;
+        [field: SerializeField]
+        public int SpeedCounter { get; private set; } = 3;
+
+        public IMusicnoteComponents Components { get; set; }
+
+        private void Start()
         {
-            AddToScore(gameManager);
-            FillGauge(gameManager);
-            AddToCounter(gameManager);
-            OnCollect?.Invoke();
+            Components = GetComponent<IMusicnoteComponents>();
         }
 
-        private void AddToScore(IGameManager gameManager)
+        public void HideNote()
         {
-            gameManager.Score += Score;
-        }
-
-        private void FillGauge(IGameManager gameManager)
-        {
-            gameManager.Gauge.FillGauge(FillAmount);
-        }
-
-        private void AddToCounter(IGameManager gameManager)
-        {
-            gameManager.SpeedCounter += SpeedCounter;
+            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }

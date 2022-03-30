@@ -676,13 +676,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Cam\CameraMovement.cs" />
+    <Compile Include="Assets\Script\Cam\GameCamera.cs" />
+    <Compile Include="Assets\Script\CharacterSelection\Character.cs" />
+    <Compile Include="Assets\Script\CharacterSelection\CharacterSelect.cs" />
     <Compile Include="Assets\Script\Collectables\Attributes\MusicnoteComponents.cs" />
     <Compile Include="Assets\Script\Collectables\Interfaces\IMusicnote.cs" />
     <Compile Include="Assets\Script\Collectables\Interfaces\IMusicnoteComponents.cs" />
     <Compile Include="Assets\Script\Collectables\Interfaces\ISpecialnote.cs" />
     <Compile Include="Assets\Script\Collectables\Musicnote.cs" />
-    <Compile Include="Assets\Script\Collectables\MusicnoteBehaviour.cs" />
     <Compile Include="Assets\Script\Collectables\Specialnotes\Powernote.cs" />
     <Compile Include="Assets\Script\Collectables\Specialnotes\Speedupnote.cs" />
     <Compile Include="Assets\Script\Collectables\Specialnotes\Spinnote.cs" />
@@ -690,13 +691,12 @@
     <Compile Include="Assets\Script\Collectables\Specialnotes\Support\EnemyHolder.cs" />
     <Compile Include="Assets\Script\Collectables\Specialnotes\Support\PowernoteEffect.cs" />
     <Compile Include="Assets\Script\Core\Managers\AnimationManager.cs" />
-    <Compile Include="Assets\Script\Core\Managers\CachedComponent.cs" />
-    <Compile Include="Assets\Script\Core\Managers\GameBehaviour.cs" />
     <Compile Include="Assets\Script\Core\Managers\GameManager.cs" />
-    <Compile Include="Assets\Script\Core\Managers\GameManagerBehaviour.cs" />
     <Compile Include="Assets\Script\Core\Managers\InputManager.cs" />
-    <Compile Include="Assets\Script\Core\Managers\ManagerDependencyInjection.cs" />
+    <Compile Include="Assets\Script\Core\Managers\LevelManager.cs" />
+    <Compile Include="Assets\Script\Core\Managers\MenuManager.cs" />
     <Compile Include="Assets\Script\Core\Managers\PlayerManager.cs" />
+    <Compile Include="Assets\Script\Core\Managers\UI\ManagerDependencyInjection.cs" />
     <Compile Include="Assets\Script\Core\Singleton\Singleton.cs" />
     <Compile Include="Assets\Script\Enemies\Ants\Ant.cs" />
     <Compile Include="Assets\Script\Enemies\Ants\States\AntDefaultState.cs" />
@@ -713,15 +713,23 @@
     <Compile Include="Assets\Script\Enemies\Interfaces\IEnemyComponents.cs" />
     <Compile Include="Assets\Script\Enemies\Interfaces\IEnemyProjectile.cs" />
     <Compile Include="Assets\Script\Enemies\Triggers\TriggerRange.cs" />
+    <Compile Include="Assets\Script\Events\CollectEvent.cs" />
+    <Compile Include="Assets\Script\Factories\CharacterFactory.cs" />
     <Compile Include="Assets\Script\Goal.cs" />
     <Compile Include="Assets\Script\Installers\GaugeInstaller.cs" />
     <Compile Include="Assets\Script\Installers\ICharacterInstaller.cs" />
     <Compile Include="Assets\Script\Installers\InventoryInstaller.cs" />
     <Compile Include="Assets\Script\Installers\ManagerInstaller.cs" />
     <Compile Include="Assets\Script\Installers\MusicnoteInstaller.cs" />
+    <Compile Include="Assets\Script\Installers\TestInstaller.cs" />
     <Compile Include="Assets\Script\Inventories\Inventory.cs" />
     <Compile Include="Assets\Script\Inventories\InventoryBehaviour.cs" />
     <Compile Include="Assets\Script\Invulnerability.cs" />
+    <Compile Include="Assets\Script\LevelSelection\Level.cs" />
+    <Compile Include="Assets\Script\LevelSelection\LevelSelect.cs" />
+    <Compile Include="Assets\Script\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\Script\MainMenu\MainMenuNavigation.cs" />
+    <Compile Include="Assets\Script\MainMenu\MainMenuStartGame.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Attributes\CharacterAttributeManager.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Attributes\CharacterComponents.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Colliders\Hitbox.cs" />
@@ -730,6 +738,7 @@
     <Compile Include="Assets\Script\PlayableCharacters\Health\Gauge.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Interfaces\ICharacter.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Interfaces\ICharacterComponents.cs" />
+    <Compile Include="Assets\Script\PlayableCharacters\Spawns\Spawn.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\Star.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\States\DamagedState.cs" />
     <Compile Include="Assets\Script\PlayableCharacters\States\DyingState.cs" />
@@ -742,11 +751,14 @@
     <Compile Include="Assets\Script\Statemachine\Interfaces\IEnterExecuteExit.cs" />
     <Compile Include="Assets\Script\Statemachine\Statemachine.cs" />
     <Compile Include="Assets\Script\Support\EnvironmentCheck.cs" />
+    <Compile Include="Assets\Script\Timers\Timer.cs" />
+    <Compile Include="Assets\Script\Timers\TimerBehaviour.cs" />
     <Compile Include="Assets\Script\UI\Background.cs" />
     <Compile Include="Assets\Script\UI\GaugeUI.cs" />
     <Compile Include="Assets\Script\UI\Menu\DeathMenu.cs" />
     <Compile Include="Assets\Script\UI\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Script\UI\Menu\WinningMenu.cs" />
+    <Compile Include="Assets\Script\UI\Score.cs" />
     <Compile Include="Assets\Script\other\Debug\FindMissingScriptsRecursively.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

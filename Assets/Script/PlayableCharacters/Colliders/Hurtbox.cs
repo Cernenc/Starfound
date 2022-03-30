@@ -9,11 +9,11 @@ namespace Assets.Script.PlayableCharacters.Colliders
 {
     public class Hurtbox : MonoBehaviour
     {
-        public ICharacter Player { get; set; }
+        public Interfaces.ICharacter Player { get; set; }
 
         private void Awake()
         {
-            Player = GetComponentInParent<ICharacter>();
+            Player = GetComponentInParent<Interfaces.ICharacter>();
         }
 
         private void OnTriggerEnter(Collider other)

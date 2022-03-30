@@ -1,8 +1,6 @@
 ﻿using Assets.Script.Statemachine.Interfaces;
 using Assets.Script.PlayableCharacters.Interfaces;
 using Assets.Script.PlayableCharacters.States.Support;
-using Assets.Script.Core.Managers;
-using Zenject;
 
 namespace Assets.Script.PlayableCharacters.States
 {
@@ -27,10 +25,8 @@ namespace Assets.Script.PlayableCharacters.States
         private StartingPointBehaviour _startingPoint;
         public void Enter(ICharacter character)
         {
-            SetupRigidbody(character);
-
-            _startingPoint = character.Manager.gameManager.StartingPoint;
-            character.Manager.animationManager.HitAnimation();
+            character.Components.Rigidbody.isKinematic = true;
+            _startingPoint = character.StartingPoint;
             character.Components.Hurtbox.enabled = false;
         }
 
@@ -41,15 +37,10 @@ namespace Assets.Script.PlayableCharacters.States
 
         public void Exit(ICharacter character)
         {
-            SetupRigidbody(character);
-            character.Manager.gameManager.SpeedCounter = 0;
-            Invulnerability.IsInvincible = true;
-        }
+            character.Components.Rigidbody.isKinematic = false;
+            character.SpeedCounter = 0;
 
-        private static void SetupRigidbody(ICharacter character)
-        {
-            character.Components.Rigidbody.useGravity = !character.Components.Rigidbody.useGravity;
-            character.Components.Rigidbody.isKinematic = !character.Components.Rigidbody.isKinematic;
+            character.IsInvincible?.Invoke();
         }
     }
 }

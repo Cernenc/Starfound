@@ -8,7 +8,7 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
     public class Beejectile : MonoBehaviour, IEnemyProjectile
     {
         public BeeHive Hive { get; set; }
-        public ICharacter Player { get; set; }
+        public PlayableCharacters.Interfaces.ICharacter Player { get; set; }
         private Vector3 TargetPosition { get; set; }
         public Vector2 MoveDirection { get; set; } = Vector2.zero;
 
@@ -20,7 +20,6 @@ namespace Assets.Script.Enemies.Bees.Beejectiles
         public void Start()
         {
             Hive = GetComponentInParent<BeeHive>();
-            Player = FindObjectOfType<ManagerDependencyInjection>().playerManager.Player;
             TargetPosition = Player.Components.Rigidbody.position;
             MoveDirection = (TargetPosition - transform.position).normalized;
             _timer = Time.time;

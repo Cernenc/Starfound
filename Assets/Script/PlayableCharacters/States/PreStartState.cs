@@ -25,15 +25,13 @@ namespace Assets.Script.PlayableCharacters.States
         private StartingPointBehaviour _startingPoint;
         public void Enter(ICharacter character)
         {
-            _startingPoint = character.Manager.gameManager.StartingPoint;
-
             character.Components.Rigidbody.isKinematic = true;
-            character.Components.Rigidbody.useGravity = false;
+            _startingPoint = character.StartingPoint;
         }
 
         public void Execute(ICharacter character)
         {
-            if(character.Manager.gameManager.StartingPoint == null)
+            if(_startingPoint == null)
             {
                 character.ChangeState(FlyingState.Instance);
                 return;
@@ -44,7 +42,6 @@ namespace Assets.Script.PlayableCharacters.States
         public void Exit(ICharacter character)
         {
             character.Components.Rigidbody.isKinematic = false;
-            character.Components.Rigidbody.useGravity = true;
         }
     }
 }

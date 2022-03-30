@@ -1,5 +1,6 @@
 ﻿using Assets.Script.Collectables.Interfaces;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Script.Inventories
 {
@@ -10,6 +11,7 @@ namespace Assets.Script.Inventories
         List<ISpecialnote> SpeedupnoteList { get; }
         void AddItem(List<ISpecialnote> list, ISpecialnote item);
         void RemoveItem(List<ISpecialnote> list);
+        void UseItem();
     }
 
     public class Inventory : IInventory
@@ -47,6 +49,11 @@ namespace Assets.Script.Inventories
             }
 
             list.RemoveAt(list.Count - 1);
+        }
+
+        public void UseItem()
+        {
+            Debug.Log("Using item");
         }
     }
 }

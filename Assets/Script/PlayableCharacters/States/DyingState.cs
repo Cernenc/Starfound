@@ -3,7 +3,7 @@ using Assets.Script.Statemachine.Interfaces;
 
 namespace Assets.Script.PlayableCharacters.States
 {
-    public class DyingState : IEnterExecuteExit<ICharacter>
+    public class DyingState : IEnterExecuteExit<Interfaces.ICharacter>
     {
         private DyingState()
         {
@@ -25,18 +25,18 @@ namespace Assets.Script.PlayableCharacters.States
             }
         }
 
-        public void Enter(ICharacter character)
+        public void Enter(Interfaces.ICharacter character)
         {
             character.Components.Rigidbody.isKinematic = true;
             character.Components.Rigidbody.useGravity = false;
-            character.Manager.gameManager.SpeedCounter = 0;
+            character.SpeedCounter = 0;
         }
 
-        public void Execute(ICharacter character)
+        public void Execute(Interfaces.ICharacter character)
         {
         }
 
-        public void Exit(ICharacter character)
+        public void Exit(Interfaces.ICharacter character)
         {
         }
     }

@@ -9,7 +9,7 @@ namespace Assets.Script.UI
         private Vector2 _offset;
 
         [field: SerializeField]
-        public CameraMovement Camera { get; set; }
+        public GameCamera Camera { get; set; }
 
         private Vector3 _lastPos;
         private float _speed;

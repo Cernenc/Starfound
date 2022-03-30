@@ -1,12 +1,9 @@
-﻿using Assets.Script.PlayableCharacters.Interfaces;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Script.Collectables.View.Specialnotes.Support
 {
     public class PowernoteEffect
     {
-        public ICharacter Player { get; set; }
-
         public IEnemyHolder Enemy { get; set; }
         public ICollectionHolder Collectable { get; set; }
 
@@ -47,8 +44,6 @@ namespace Assets.Script.Collectables.View.Specialnotes.Support
             {
                 if (collectable.Components.Transform.GetComponent<Renderer>().isVisible)
                 {
-                    collectable.Player = Player;
-                    collectable.OnCollect.Invoke();
                 }
             }
         }

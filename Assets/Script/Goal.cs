@@ -18,12 +18,11 @@ public class Goal : MonoBehaviour
         if (_isColliding) return;
         _isColliding = true;
 
-        var player = other.GetComponent<ICharacter>();
+        var player = other.GetComponent<Assets.Script.PlayableCharacters.Interfaces.ICharacter>();
         LevelClear(player);
     }
 
-    private void LevelClear(ICharacter player)
+    private void LevelClear(Assets.Script.PlayableCharacters.Interfaces.ICharacter player)
     {
-        FindObjectOfType<ManagerDependencyInjection>().playerManager.OnLevelClear.Invoke();
     }
 }

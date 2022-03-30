@@ -1,6 +1,7 @@
 ﻿using Assets.Script.Collectables.Interfaces;
 using Assets.Script.Collectables.View.Specialnotes.Support;
 using Assets.Script.Core.Managers;
+using Assets.Script.Events;
 using Assets.Script.Inventories;
 using Assets.Script.PlayableCharacters.Interfaces;
 using System;
@@ -18,35 +19,20 @@ namespace Assets.Script.Collectables.View.Specialnotes
 
         public int SpeedCounter { get; } = 2;
 
-        [field: SerializeField]
-        public UnityEvent OnCollect { get; set; }
+        public UnityEvent<double, float, int> OnCollect { get; set; }
         [field: SerializeField]
         public UnityEvent OnActivation { get; set; }
         
         public IMusicnoteComponents Components { get; set; }
-        public ICharacter Player { get; set; }
-
         public PowernoteEffect PowernoteEffect { get; set; }
 
         [Inject]
         private IInventory inventory { get; set; }
 
-        public Musicnote MusicnoteLogic { get; set; }
-        public IGameManager gameManager { get; set; }
-
-        [Inject]
-        public void Construct(IGameManager gameManager)
-        {
-            this.gameManager = gameManager;
-        }
+        public double ScoreAmount { get; } = 100;
 
         private void Start()
         {
-            MusicnoteLogic = new Musicnote();
-            MusicnoteLogic.Score = 0;
-            MusicnoteLogic.SpeedCounter = SpeedCounter;
-            MusicnoteLogic.FillAmount = FillAmount;
-            MusicnoteLogic.OnCollect += HandleCollect;
             Components = GetComponent<IMusicnoteComponents>();
 
             PowernoteEffect = new PowernoteEffect();
@@ -54,15 +40,8 @@ namespace Assets.Script.Collectables.View.Specialnotes
             PowernoteEffect.Collectable = FindObjectOfType<CollectionHolder>();
         }
 
-        private void HandleCollect()
+        public void Collect(double d, float f, int i)
         {
-            OnCollect.Invoke();
-        }
-
-        public void Collect()
-        {
-            MusicnoteLogic.AddNote(gameManager);
-            PowernoteEffect.Player = Player;
             inventory.AddItem(inventory.PowernoteList, this);
             OnActivation.Invoke();
         }

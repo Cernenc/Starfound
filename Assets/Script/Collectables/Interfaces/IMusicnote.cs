@@ -1,14 +1,13 @@
-﻿using Assets.Script.PlayableCharacters.Interfaces;
-using UnityEngine.Events;
+﻿using UnityEngine.Events;
 
 namespace Assets.Script.Collectables.Interfaces
 {
     public interface IMusicnote
     {
+        double ScoreAmount { get; }
         float FillAmount { get; }
-        UnityEvent OnCollect { get; set; }
+        int SpeedCounter { get; }
         IMusicnoteComponents Components { get; set; }
-        void Collect();
-        ICharacter Player { get; set; }
+        void HideNote();
     }
 }

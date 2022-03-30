@@ -111,8 +111,9 @@ MonoBehaviour:
   <OnCollect>k__BackingField:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6867824450527353017}
-        m_MethodName: HideNote
+      - m_Target: {fileID: 5342592238244769817, guid: 3e9204e0c96d6c141ac5daabc1bf4d82,
+          type: 3}
+        m_MethodName: Collect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

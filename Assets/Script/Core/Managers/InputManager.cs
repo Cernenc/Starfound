@@ -1,80 +1,57 @@
-﻿using Assets.Script.PlayableCharacters.States.Support;
-using UnityEngine;
-using Zenject;
+﻿using System;
 
 namespace Assets.Script.Core.Managers
 {
     public interface IInputManager
     {
-        void ManageInputs();
+        Action<float> OnInputHorizontalMovement { get; set; }
+        Action<float> OnInputVerticalMovement { get; set; }
+        Action OnInputSpecial { get; set; }
+        Action OnInputItem { get; set; }
+        Action OnInputPause { get; set; }
+        float Horizontal { get; set; }
+        float Vertical { get; set; }
     }
 
     public class InputManager : IInputManager
     {
-        [Inject]
-        private IPlayerManager playerManager { get; set; }
+        public Action<float> OnInputHorizontalMovement { get; set; }
+        public Action<float> OnInputVerticalMovement { get; set; }
+        public Action OnInputSpecial { get; set; }
+        public Action OnInputItem { get; set; }
+        public Action OnInputPause { get; set; }
 
-        [Inject]
-        private IGameManager gameManager { get; set; }
-
-        public void ManageInputs()
+        private float _horizontal;
+        public float Horizontal
         {
-            if(playerManager.Player == null)
+            get
             {
-                return;
+                return _horizontal;
             }
-            JumpInput();
-            ActivateItem();
-            PauseGame();
-        }
-
-        private void PauseGame()
-        {
-            if (!gameManager.CanPause)
+            set
             {
-                return;
-            }
-            if (Input.GetButtonDown("Cancel"))
-            {
-                gameManager.pauseMenu.OnPauseGame();
-            }
-        }
-
-        private void JumpInput()
-        {
-            if (Input.GetButton("Jump"))
-            {
-                Movement.VerticalMovement = playerManager.Player.AttributeManager.JumpHeight;
-            }
-            else
-            {
-                Movement.VerticalMovement = -playerManager.Player.AttributeManager.FallSpeed;
-            }
-        }
-
-        private void ActivateItem()
-        {
-            if (gameManager.PlayerInventory == null)
-            {
-                return;
-            }
-            if (Input.GetButtonDown("Fire1"))
-            {
-                if (gameManager.PlayerInventory.SpeedupnoteList.Count == 0)
+                if (_horizontal != value)
                 {
-                    return;
+                    _horizontal = value;
+                    OnInputHorizontalMovement.Invoke(_horizontal);
                 }
-
-                gameManager.PlayerInventory.SpeedupnoteList[0].OnActivation.Invoke();
             }
-            else if (Input.GetButtonDown("Fire2"))
-            {
-                if (gameManager.PlayerInventory.SpinnoteList.Count == 0)
-                {
-                    return;
-                }
+        }
 
-                gameManager.PlayerInventory.SpinnoteList[0].OnActivation.Invoke();
+        private float _vertical;
+        public float Vertical
+        {
+            get
+            {
+                return _vertical;
+            }
+            set
+            {
+                if (_vertical != value)
+                {
+                    _vertical = value;
+                    OnInputVerticalMovement.Invoke(_vertical);
+                }
             }
         }
     }
